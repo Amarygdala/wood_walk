@@ -20,45 +20,105 @@ class Profile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-              Container(
-                  width: 190.0,
-                  height: 190.0,
-                  decoration: new BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: new DecorationImage(
-                          fit: BoxFit.fill,
-                          image: new NetworkImage(
-                              "https://i1.rgstatic.net/ii/profile.image/846259942338566-1578775501342_Q512/Jordan_Wang.jpg")
-                      )
-                  )),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 48, 0, 0),
+                child: Container(
+                    width: 240.0,
+                    height: 240.0,
+                    decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                            fit: BoxFit.fill,
+                            image: new NetworkImage(
+                                "https://i1.rgstatic.net/ii/profile.image/846259942338566-1578775501342_Q512/Jordan_Wang.jpg")
+                        )
+                    )),
+              ),
             ]
             ),
             //Logo here
             Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(60.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  TextFieldWidget(
-                    hintText: 'Email',
-                    obscureText: false,
-                    prefixIconData: Icons.mail_outline,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.drive_file_rename_outline,
+                          ),
+                          Text(
+                            ' Name:',
+                            style: TextStyle(
+                              fontSize: 21,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                          'Xiang Weng',
+                      style: TextStyle(
+                        fontSize: 21,
+                      )
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 40.0,
                   ),
-                  TextFieldWidget(
-                    hintText: 'Email',
-                    obscureText: false,
-                    prefixIconData: Icons.mail_outline,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.access_alarms,
+                          ),
+                          Text(
+                              ' Joined On:',
+                            style: TextStyle(
+                              fontSize: 21,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                          'April 23, 2021',
+                          style: TextStyle(
+                            fontSize: 21,
+                          )
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 40.0,
                   ),
-                  TextFieldWidget(
-                    hintText: 'Email',
-                    obscureText: false,
-                    prefixIconData: Icons.mail_outline,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.mail_outline,
+                          ),
+                          Text(
+                            ' Email:',
+                            style: TextStyle(
+                              fontSize: 21,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                          'xiang@htne.com',
+                          style: TextStyle(
+                            fontSize: 21,
+                          )
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 40.0,
