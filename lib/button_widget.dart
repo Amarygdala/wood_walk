@@ -21,6 +21,9 @@ class ButtonWidget extends StatelessWidget {
           : Border.fromBorderSide(BorderSide.none),
         ),
         child: InkWell(
+           onTap: () {
+             Navigator.pushNamed(context, "/home");
+           },
           borderRadius: BorderRadius.circular(10),
           child: Container(
             height: 60.0,
