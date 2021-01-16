@@ -13,7 +13,7 @@ class Water extends StatelessWidget {
       home: SafeArea(
         child: Scaffold(
         appBar: AppBar(
-          title: const Text('Wood Walk'),
+          title: const Text('My Tree'),
           centerTitle: true,
           backgroundColor: Colors.green,
           elevation: 10,

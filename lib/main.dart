@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         home: SafeArea(
         child: Scaffold(
         appBar: AppBar(
-          title: const Text('Wood Walk'),
+          title: const Text('My Steps'),
           centerTitle: true,
           backgroundColor: Colors.green,
           elevation: 10,
