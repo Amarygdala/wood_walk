@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wood_walk/textfield_widget.dart';
-
+import 'package:wood_walk/wave_widget.dart';
 import 'button_widget.dart';
 
 int index = 0;
@@ -9,6 +9,8 @@ int index = 0;
 class Water extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
@@ -54,10 +56,21 @@ class Water extends StatelessWidget {
               )
             ],
           ),
-        body: Center(
+        body: Stack(
+            children: <Widget>[
+              Container(
+                height: size.height - 200,
+                color: Colors.blue,
+              ),
+              WaveWidget(
+                size: size,
+                yOffset: size.height / 3.0,
+                color: Colors.white,
+              ),
+            ],
         ),
-      ),
       )
+    )
     );
   }
 }
