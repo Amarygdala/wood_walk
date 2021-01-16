@@ -7,7 +7,7 @@ import 'package:wood_walk/profile.dart';
 
 
 void main() => runApp( MaterialApp(
-      initialRoute: '/profile',
+      initialRoute: '/',
       routes: {
         '/': (context) => Login(),
         '/home': (context) => MyApp(),
@@ -51,6 +51,8 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
   }
 
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,7 +66,15 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.green[300],
           elevation: 200,
-          currentIndex: 0, // this will be set when a new tab is tapped
+          currentIndex: index, // this will be set when a new tab is tapped
+          onTap: (index) {
+            print(index);
+            String s;
+            if(index == 1) { s = '/';}
+            else if (index == 2) {s = '/profile';}
+            else {s = '/home';}
+            Navigator.pushNamed(context, s);
+          },
           items: [
             BottomNavigationBarItem(
               icon: new Icon(Icons.water_damage),
@@ -76,7 +86,7 @@ class _MyAppState extends State<MyApp> {
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: 'Profile'
+                label: 'Profile',
             )
           ],
         ),
