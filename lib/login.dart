@@ -1,28 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wood_walk/textfield_widget.dart';
-import 'package:wood_walk/wave_widget.dart';
-
 import 'button_widget.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+
 
     return SafeArea(
       child: Scaffold(
         body: Stack(
           children: <Widget>[
-            //Logo here
-            Container(
-              height: size.height - 200,
-              color: Colors.blue,
-            ),
-            WaveWidget(
-              size: size,
-              yOffset: size.height / 3.0,
-              color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                    Image(
+                      image: AssetImage('assets/logo.png'),
+                      width: 200,
+                    ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(30.0),
