@@ -55,15 +55,17 @@ class _MyAppState extends State<MyApp> {
           elevation: 10,
         ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.green[300],
+          elevation: 200,
           currentIndex: 0, // this will be set when a new tab is tapped
           items: [
             BottomNavigationBarItem(
-              icon: new Icon(Icons.grass_sharp),
-              label: 'Grow',
-            ),
-            BottomNavigationBarItem(
               icon: new Icon(Icons.water_damage),
               label: 'Water',
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.grass_sharp),
+              label: 'Grow',
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
@@ -72,27 +74,32 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Steps taken:',
-                style: TextStyle(fontSize: 30),
-              ),
-              Text(
-                _steps,
-                style: TextStyle(fontSize: 60),
-              ),
-              Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+            child: Container(
+              color: Colors.blue[400],
+              padding: EdgeInsets.all(145),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                         Text(
+                          'Steps taken:',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                         Text(
+                          _steps,
+                          style: TextStyle(fontSize: 30),
+
+                      ),
+                    ],
+                  ),
 //              Divider(
 //                height: 100,
 //                thickness: 0,
 //                color: Colors.white,
 //              ),
-            ],
-          ),
+              ),
+            ),
         ),
-      ),
     );
   }
 }
