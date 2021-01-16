@@ -49,7 +49,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Pedometer example app'),
+          title: const Text('Wood Walk'),
+          centerTitle: true,
+          backgroundColor: Colors.green,
+          elevation: 10,
         ),
         body: Center(
           child: Column(
@@ -63,15 +66,11 @@ class _MyAppState extends State<MyApp> {
                 _steps,
                 style: TextStyle(fontSize: 60),
               ),
-              Divider(
-                height: 100,
-                thickness: 0,
-                color: Colors.white,
-              ),
-              Text(
-                'Pedestrian status:',
-                style: TextStyle(fontSize: 30),
-              ),
+//              Divider(
+//                height: 100,
+//                thickness: 0,
+//                color: Colors.white,
+//              ),
             ],
           ),
         ),
