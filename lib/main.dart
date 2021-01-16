@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:pedometer/pedometer.dart';
+import 'package:wood_walk/login.dart';
 
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp( MaterialApp(
+      initialRoute: '/home',
+      routes: {
+        '/': (context) => Login(),
+        '/home': (context) => MyApp(),
+      },
+  ));
 
 class MyApp extends StatefulWidget {
   @override
