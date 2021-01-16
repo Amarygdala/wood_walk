@@ -3,9 +3,6 @@ import 'dart:async';
 
 import 'package:pedometer/pedometer.dart';
 
-String formatDate(DateTime d) {
-  return d.toString().substring(0, 19);
-}
 
 void main() {
   runApp(MyApp());
