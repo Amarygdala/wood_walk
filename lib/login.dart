@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
                     children: <Widget>[
                       TextFieldWidget(
                         hintText: 'Password',
-                        obscureText: false,
+                        obscureText: true,
                         prefixIconData: Icons.lock_outline,
                       ),
                       SizedBox(
