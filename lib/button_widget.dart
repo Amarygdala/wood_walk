@@ -28,7 +28,7 @@ class ButtonWidget extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                  color: hasBorder ? Colors.blue : Colors.white,
+                  color: hasBorder ? Colors.white : Colors.blue,
                   fontWeight: FontWeight.w600,
                   fontSize: 16.0,
                 ),

@@ -6,7 +6,7 @@ import 'package:wood_walk/login.dart';
 
 
 void main() => runApp( MaterialApp(
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
         '/': (context) => Login(),
         '/home': (context) => MyApp(),
