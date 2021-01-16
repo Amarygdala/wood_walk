@@ -58,12 +58,12 @@ class _MyAppState extends State<MyApp> {
           currentIndex: 0, // this will be set when a new tab is tapped
           items: [
             BottomNavigationBarItem(
-              icon: new Icon(Icons.home),
-              label: 'Home',
+              icon: new Icon(Icons.grass_sharp),
+              label: 'Grow',
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.mail),
-              label: 'Messages',
+              icon: new Icon(Icons.water_damage),
+              label: 'Water',
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Text(
                 'Steps taken:',
@@ -83,6 +83,7 @@ class _MyAppState extends State<MyApp> {
                 _steps,
                 style: TextStyle(fontSize: 60),
               ),
+              Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
 //              Divider(
 //                height: 100,
 //                thickness: 0,
