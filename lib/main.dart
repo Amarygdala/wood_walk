@@ -15,8 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Stream<StepCount> _stepCountStream;
-  Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
+  String _steps = '?';
 
   @override
   void initState() {
@@ -31,21 +30,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void onPedestrianStatusChanged(PedestrianStatus event) {
-    print(event);
-    setState(() {
-      _status = event.status;
-    });
-  }
-
-  void onPedestrianStatusError(error) {
-    print('onPedestrianStatusError: $error');
-    setState(() {
-      _status = 'Pedestrian Status not available';
-    });
-    print(_status);
-  }
-
   void onStepCountError(error) {
     print('onStepCountError: $error');
     setState(() {
@@ -54,11 +38,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void initPlatformState() {
-    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    _pedestrianStatusStream
-        .listen(onPedestrianStatusChanged)
-        .onError(onPedestrianStatusError);
-
     _stepCountStream = Pedometer.stepCountStream;
     _stepCountStream.listen(onStepCount).onError(onStepCountError);
 
@@ -93,22 +72,6 @@ class _MyAppState extends State<MyApp> {
                 'Pedestrian status:',
                 style: TextStyle(fontSize: 30),
               ),
-              Icon(
-                _status == 'walking'
-                    ? Icons.directions_walk
-                    : _status == 'stopped'
-                    ? Icons.accessibility_new
-                    : Icons.error,
-                size: 100,
-              ),
-              Center(
-                child: Text(
-                  _status,
-                  style: _status == 'walking' || _status == 'stopped'
-                      ? TextStyle(fontSize: 30)
-                      : TextStyle(fontSize: 20, color: Colors.red),
-                ),
-              )
             ],
           ),
         ),
