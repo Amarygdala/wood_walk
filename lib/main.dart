@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:pedometer/pedometer.dart';
 import 'package:wood_walk/login.dart';
 import 'package:wood_walk/profile.dart';
+import 'package:wood_walk/water.dart';
 
 
 void main() => runApp( MaterialApp(
@@ -11,6 +12,7 @@ void main() => runApp( MaterialApp(
       routes: {
         '/': (context) => Login(),
         '/home': (context) => MyApp(),
+        '/tree': (context) => Water(),
         '/profile': (context) => Profile(),
       },
   ));
@@ -56,7 +58,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+        home: SafeArea(
+        child: Scaffold(
         appBar: AppBar(
           title: const Text('Wood Walk'),
           centerTitle: true,
@@ -70,22 +73,29 @@ class _MyAppState extends State<MyApp> {
           onTap: (index) {
             print(index);
             String s;
-            if(index == 1) { s = '/';}
+            if(index == 1) { s = '/tree';}
             else if (index == 2) {s = '/profile';}
             else {s = '/home';}
             Navigator.pushNamed(context, s);
           },
           items: [
             BottomNavigationBarItem(
-              icon: new Icon(Icons.water_damage),
+              icon: new Icon(
+                  Icons.water_damage),
               label: 'Water',
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.grass_sharp),
+              icon: new Icon(
+                  Icons.grass_sharp,
+                color: Colors.white,
+              ),
               label: 'Grow',
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(
+                    Icons.person,
+                  color: Colors.white,
+                ),
                 label: 'Profile',
             )
           ],
@@ -117,6 +127,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
         ),
+    )
     );
   }
 }
