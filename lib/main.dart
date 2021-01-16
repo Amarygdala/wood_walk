@@ -3,13 +3,15 @@ import 'dart:async';
 
 import 'package:pedometer/pedometer.dart';
 import 'package:wood_walk/login.dart';
+import 'package:wood_walk/profile.dart';
 
 
 void main() => runApp( MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/profile',
       routes: {
         '/': (context) => Login(),
         '/home': (context) => MyApp(),
+        '/profile': (context) => Profile(),
       },
   ));
 
