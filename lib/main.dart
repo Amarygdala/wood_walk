@@ -54,6 +54,23 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.green,
           elevation: 10,
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0, // this will be set when a new tab is tapped
+          items: [
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.mail),
+              label: 'Messages',
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile'
+            )
+          ],
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
