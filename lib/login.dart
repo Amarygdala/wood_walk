@@ -12,17 +12,31 @@ class Login extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 100.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                    Image(
-                      image: AssetImage('assets/logo.png'),
-                      width: 200,
-                    ),
-                ],
-              ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                        Image(
+                          image: AssetImage('assets/logo.png'),
+                          width: 200,
+                        ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text(
+                  'Wood Walk',
+                  style: TextStyle(
+                    fontFamily: 'Abel',
+                    fontSize: 56,
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.all(30.0),
