@@ -7,7 +7,8 @@ import 'package:wood_walk/profile.dart';
 import 'package:wood_walk/water.dart';
 import 'package:weather_widget/WeatherWidget.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
-int n = 0, treePlanted = 0;
+int n = 0;
+int treePlanted = 0;
 
 
 void main() => runApp( MaterialApp(
@@ -55,6 +56,7 @@ class _MyAppState extends State<MyApp> {
   Stream<PedestrianStatus> _pedestrianStatusStream;
   String _steps = '?';
   String _status = '?';
+  static int pass = treePlanted;
   int rain = 0;
   @override
   void initState() {
@@ -194,7 +196,22 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
-            Text('Stage $n'),
+            Container(
+              height: 20,
+              width: 20,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                Padding(
+                padding: const EdgeInsets.only(top: 100.0),
+                child: Row(
+                children: [
+                  Text('You planted $treePlanted tree(s).'),
+                ],
+              ),
+            ),
+  ])
+            ),
             Container(
               height: 50,
               width: 400,
@@ -206,7 +223,7 @@ class _MyAppState extends State<MyApp> {
                 borderWidth: 5.0,
                 borderRadius: 12.0,
                 direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
-                center: Text(((1-percent)*100).toInt().abs().toString() + "% until Stage " + (n+1).toString()),
+                center: Text(((1-percent)*100).toInt().abs().toString() + " drops until Stage " + (n+1).toString()),
               ),
             ),
           ],

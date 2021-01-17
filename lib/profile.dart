@@ -68,7 +68,7 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 25.0),
                   Text(
                     'DATE JOINED',
                     style: TextStyle(
@@ -94,7 +94,7 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 25.0),
                   Text(
                     'EMAIL',
                     style: TextStyle(
