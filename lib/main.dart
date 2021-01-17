@@ -78,6 +78,8 @@ class _MyAppState extends State<MyApp> {
             else s = '/profile';
             Navigator.pushNamed(context, s);
           },
+          selectedFontSize: 12.0,
+          selectedItemColor: Colors.black54,
           items: [
             BottomNavigationBarItem(
               icon: new Icon(
