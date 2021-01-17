@@ -74,6 +74,7 @@ class _MyAppState extends State<MyApp> {
       if(_status == 'stopped'){
         rain = 0;
       }else if(_status == 'walking'){
+
         rain = 50;
       }
     });
@@ -171,7 +172,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('assets/tree$n.png'),
+                        image: AssetImage('assets/tree${n%5}.png'),
                         width: 200,
                       ),
                     ],
@@ -191,7 +192,7 @@ class _MyAppState extends State<MyApp> {
                 borderWidth: 5.0,
                 borderRadius: 12.0,
                 direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
-                center: Text(((1-percent)*100).toString() + "% until Stage " + (n+1).toString()),
+                center: Text(((1-percent)*100).toInt().abs().toString() + "% until Stage " + (n+1).toString()),
               ),
             ),
           ],
