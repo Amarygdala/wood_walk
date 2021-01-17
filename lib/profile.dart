@@ -106,7 +106,7 @@ class Profile extends StatelessWidget {
                   Row(
                   children: <Widget>[
                     Text(
-                      'doe.johns@htne.com ',
+                      'doe@htne.com ',
                       style: TextStyle(
                         color: Colors.green[300],
                         letterSpacing: 2.0,
