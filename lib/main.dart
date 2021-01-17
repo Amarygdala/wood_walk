@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
     print(event);
     setState(() {
       _steps = event.steps.toString();
-      percent += 0.01;
+      percent += 0.10;
       if(percent >= 1){
         percent = 0;
         n++;
