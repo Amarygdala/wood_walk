@@ -221,17 +221,18 @@ showStageUpDialog(BuildContext context) {
 
   // set up the button
   Widget okButton = FlatButton(
-    child: Text("OK"),
+    child: Text("OK",style: TextStyle(color: Colors.white),),
     onPressed: () {Navigator.pop(context);},
   );
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Congratulations!"),
-    content: Text("You have reached stage $n "),
+    title: Text("Congratulations!",style: TextStyle(color: Colors.white),),
+    content: Text("You have reached stage $n. ",style: TextStyle(color: Colors.white),),
     actions: [
       okButton,
     ],
+    backgroundColor: Colors.green,
   );
 
   // show the dialog
@@ -247,17 +248,18 @@ showFinishDialog(BuildContext context) {
 
   // set up the button
   Widget okButton = FlatButton(
-    child: Text("OK"),
+    child: Text("OK",style: TextStyle(color: Colors.white),),
     onPressed: () {Navigator.pop(context);},
   );
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Congratulations!"),
-    content: Text("You have grown the tree. Now a tree will be planted in real life under your name. You have planted $treePlanted tree(s)."),
+    title: Text("Congratulations!",style: TextStyle(color: Colors.white),),
+    content: Text("You have grown the tree. Now a tree will be planted in real life under your name. You have planted $treePlanted tree(s).",style: TextStyle(color: Colors.white),),
     actions: [
       okButton,
     ],
+    backgroundColor: Colors.green,
   );
 
   // show the dialog
