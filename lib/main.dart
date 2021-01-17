@@ -7,7 +7,8 @@ import 'package:wood_walk/profile.dart';
 import 'package:wood_walk/water.dart';
 import 'package:weather_widget/WeatherWidget.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
-int n = 0;
+int n = 0, treePlanted = 0;
+
 
 void main() => runApp( MaterialApp(
       initialRoute: '/',
@@ -65,15 +66,15 @@ class _MyAppState extends State<MyApp> {
     print(event);
     setState(() {
       _steps = event.steps.toString();
-      percent += 0.01;
+      percent += 0.5;
       if(percent >= 1){
         percent = 0;
         n++;
-        if(n != 4){
+        if(n%5 != 0){
           showStageUpDialog(context);
-        }else{
+        }else if (n%5 == 0){
+          treePlanted++;
           showFinishDialog(context);
-          n=0;
         }
 
       }
@@ -137,7 +138,7 @@ class _MyAppState extends State<MyApp> {
             print(index);
             String s;
             if(index == 0) s = '/tree';
-            else if (index == 1) s ='/home';
+            else if (index == 1){}
             else s = '/profile';
             Navigator.pushNamed(context, s);
           },
@@ -253,7 +254,7 @@ showFinishDialog(BuildContext context) {
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Congratulations!"),
-    content: Text("You have grown the tree. Now a tree will be planted in real life under your name."),
+    content: Text("You have grown the tree. Now a tree will be planted in real life under your name. You have planted $treePlanted tree(s)."),
     actions: [
       okButton,
     ],

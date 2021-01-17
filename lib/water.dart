@@ -72,7 +72,7 @@ class _WaterState extends State<Water> {
             onTap: (index) {
               print(index);
               String s;
-              if(index == 0) s = '/tree';
+              if(index == 0) {}
               else if (index == 1) s ='/home';
               else s = '/profile';
               Navigator.pushNamed(context, s);
