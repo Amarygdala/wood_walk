@@ -60,12 +60,6 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: SafeArea(
         child: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Tree'),
-          centerTitle: true,
-          backgroundColor: Colors.green,
-          elevation: 10,
-        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.green[300],
           elevation: 200,

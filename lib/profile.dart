@@ -25,7 +25,7 @@ class Profile extends StatelessWidget {
                       width: 240.0,
                       height: 240.0,
                       decoration: new BoxDecoration(
-                        border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+                        border: Border.all(width: 3.0, color: const Color(0xFFFFFFFF)),
                           shape: BoxShape.circle,
                           image: new DecorationImage(
                               fit: BoxFit.fill,

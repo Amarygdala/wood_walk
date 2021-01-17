@@ -12,12 +12,6 @@ class Water extends StatelessWidget {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Steps'),
-          centerTitle: true,
-          backgroundColor: Colors.green,
-          elevation: 10,
-        ),
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.green[300],
             elevation: 200,
@@ -57,6 +51,7 @@ class Water extends StatelessWidget {
           ),
         body: Stack(
             children: <Widget>[
+
               Container(
                 height: size.height - 200,
                 color: Colors.blue,
@@ -65,6 +60,14 @@ class Water extends StatelessWidget {
                 size: size,
                 yOffset: size.height / 3.0,
                 color: Colors.white,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/water_background2.png'),
+                      fit: BoxFit.cover,
+                    )
+                ),
               ),
             ],
         ),
