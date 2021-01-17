@@ -26,9 +26,6 @@ class Login extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 10.0,
-                ),
                 Text(
                   'Wood Walk',
                   style: TextStyle(
@@ -36,6 +33,7 @@ class Login extends StatelessWidget {
                     fontSize: 56,
                   ),
                 ),
+
               ],
             ),
             Padding(
