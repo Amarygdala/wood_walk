@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wood_walk/textfield_widget.dart';
 
 import 'button_widget.dart';
 
@@ -38,7 +37,7 @@ class Profile extends StatelessWidget {
             ),
             //Logo here
             Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.all(55.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
@@ -53,7 +52,7 @@ class Profile extends StatelessWidget {
                           Text(
                             ' Name:',
                             style: TextStyle(
-                              fontSize: 21,
+                              fontSize: 20,
                             ),
                           ),
                         ],
@@ -61,7 +60,7 @@ class Profile extends StatelessWidget {
                       Text(
                           'Xiang Weng',
                       style: TextStyle(
-                        fontSize: 21,
+                        fontSize: 20,
                       )
                       ),
                     ],
@@ -80,7 +79,7 @@ class Profile extends StatelessWidget {
                           Text(
                               ' Joined On:',
                             style: TextStyle(
-                              fontSize: 21,
+                              fontSize: 20,
                             ),
                           ),
                         ],
@@ -88,7 +87,7 @@ class Profile extends StatelessWidget {
                       Text(
                           'April 23, 2021',
                           style: TextStyle(
-                            fontSize: 21,
+                            fontSize: 20,
                           )
                       ),
                     ],
@@ -107,7 +106,7 @@ class Profile extends StatelessWidget {
                           Text(
                             ' Email:',
                             style: TextStyle(
-                              fontSize: 21,
+                              fontSize: 20,
                             ),
                           ),
                         ],
@@ -115,7 +114,7 @@ class Profile extends StatelessWidget {
                       Text(
                           'xiang@htne.com',
                           style: TextStyle(
-                            fontSize: 21,
+                            fontSize: 20,
                           )
                       ),
                     ],

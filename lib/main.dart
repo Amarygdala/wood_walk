@@ -81,16 +81,17 @@ class _MyAppState extends State<MyApp> {
           items: [
             BottomNavigationBarItem(
               icon: new Icon(
-                  Icons.water_damage),
-              label: 'Water',
-            ),
-            BottomNavigationBarItem(
-              icon: new Icon(
-                  Icons.grass_sharp,
-                color: Colors.white,
+                Icons.grass_sharp,
               ),
               label: 'Grow',
             ),
+            BottomNavigationBarItem(
+              icon: new Icon(
+                  Icons.water_damage,
+                  color: Colors.white),
+              label: 'Water',
+            ),
+
             BottomNavigationBarItem(
                 icon: Icon(
                     Icons.person,

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wood_walk/textfield_widget.dart';
 import 'package:wood_walk/wave_widget.dart';
-import 'button_widget.dart';
 
 int index = 0;
 
@@ -35,17 +33,17 @@ class Water extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                 icon: new Icon(
-                    Icons.water_damage,
-                    color: Colors.white,
+                  Icons.grass_sharp,
+                  color: Colors.white,
                 ),
-                label: 'Water',
+                label: 'Grow',
               ),
               BottomNavigationBarItem(
                 icon: new Icon(
-                    Icons.grass_sharp,
+                  Icons.water_damage,
                   color: Colors.green,
                 ),
-                label: 'Grow',
+                label: 'Water',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
