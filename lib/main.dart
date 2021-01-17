@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
     print(event);
     setState(() {
       _steps = event.steps.toString();
-      percent += 0.5;
+      percent += 0.01;
       if(percent >= 1){
         percent = 0;
         n++;
@@ -197,22 +197,6 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             Container(
-              height: 20,
-              width: 20,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: Row(
-                children: [
-                  Text('You planted $treePlanted tree(s).'),
-                ],
-              ),
-            ),
-  ])
-            ),
-            Container(
               height: 50,
               width: 400,
               child: LiquidLinearProgressIndicator(
@@ -223,7 +207,7 @@ class _MyAppState extends State<MyApp> {
                 borderWidth: 5.0,
                 borderRadius: 12.0,
                 direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
-                center: Text(((1-percent)*100).toInt().abs().toString() + " drops until Stage " + (n+1).toString()),
+                center: Text(((1-percent)*100).toInt().abs().toString() + " drops until Stage " + (n+1).toString() +  '. (Lifetime Total: $treePlanted)'),
               ),
             ),
           ],
