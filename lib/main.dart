@@ -17,8 +17,13 @@ void main() => runApp( MaterialApp(
       },
   ));
 
-class Weather extends StatelessWidget {
+class Weather extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _WeatherState createState() => _WeatherState();
+}
+
+class _WeatherState extends State<Weather> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,8 +49,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Stream<StepCount> _stepCountStream;
+  Stream<PedestrianStatus> _pedestrianStatusStream;
   String _steps = '?';
-
+  String _status = '?';
+  int rain = 0;
   @override
   void initState() {
     super.initState();
@@ -59,6 +66,26 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    print(event);
+    setState(() {
+      _status = event.status;
+      if(_status == 'stopped'){
+        rain = 0;
+      }else if(_status == 'walking'){
+        rain = 50;
+      }
+    });
+  }
+
+  void onPedestrianStatusError(error) {
+    print('onPedestrianStatusError: $error');
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+    print(_status);
+  }
+
   void onStepCountError(error) {
     print('onStepCountError: $error');
     setState(() {
@@ -67,6 +94,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
+
     _stepCountStream = Pedometer.stepCountStream;
     _stepCountStream.listen(onStepCount).onError(onStepCountError);
 
@@ -121,7 +153,7 @@ class _MyAppState extends State<MyApp> {
             size:Size.infinite,
             weather:'Rainy',
             rainConfig:RainConfig(
-                rainNum: 40
+                rainNum: rain
             )
         ),
         ),
