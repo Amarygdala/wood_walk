@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'button_widget.dart';
-
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,108 +35,86 @@ class Profile extends StatelessWidget {
             ),
             //Logo here
             Padding(
-              padding: const EdgeInsets.all(55.0),
+              padding: EdgeInsets.fromLTRB(25, 330, 20, 0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'NAME',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.drive_file_rename_outline,
-                          ),
-                          Text(
-                            ' Name:',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
                       Text(
-                          'Xiang Weng',
+                        'Xiang Weng ',
+                        style: TextStyle(
+                          color: Colors.blue[200],
+                          letterSpacing: 2.0,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.drive_file_rename_outline,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 25.0),
+                  Text(
+                    'DATE JOINED',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Row(
+                    children: [
+                      Text(
+                        'January 17, 2021 ',
+                        style: TextStyle(
+                          color: Colors.blue[200],
+                          letterSpacing: 2.0,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.access_alarms,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 25.0),
+                  Text(
+                    'EMAIL',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Row(
+                  children: <Widget>[
+                    Text(
+                      'xiang@htne.com ',
                       style: TextStyle(
-                        fontSize: 20,
-                      )
+                        color: Colors.blue[200],
+                        letterSpacing: 2.0,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                        Icon(
+                          Icons.email,
+                          color: Colors.grey,
+                        ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.access_alarms,
-                          ),
-                          Text(
-                              ' Joined On:',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                          'April 23, 2021',
-                          style: TextStyle(
-                            fontSize: 20,
-                          )
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.mail_outline,
-                          ),
-                          Text(
-                            ' Email:',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                          'xiang@htne.com',
-                          style: TextStyle(
-                            fontSize: 20,
-                          )
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  ButtonWidget(
-                    title: 'Update Profile',
-                    hasBorder: false,
-                  ),
-                  SizedBox(
-                    height: 10.0,
                   ),
                 ],
               ),
