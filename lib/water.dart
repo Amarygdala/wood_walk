@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wood_walk/wave_widget.dart';
 import 'package:intl/intl.dart';
+import 'package:pedometer/pedometer.dart';
 
 int index = 0;
 
@@ -16,11 +17,33 @@ class _WaterState extends State<Water> {
   DateTime now;
   Timer _everySecond;
   String formattedDate;
+  Stream<StepCount> _stepCountStream;
+  String _steps = '?';
 
+  void onStepCount(StepCount event) {
+    print(event);
+    setState(() {
+      _steps = event.steps.toString();
+    });
+  }
+
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 'Step Count not available';
+    });
+  }
+
+  void initPlatformState() {
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
+  }
   @override
   void initState() {
     super.initState();
-
+    initPlatformState();
     // sets first value
     now = DateTime.now();
 
@@ -38,7 +61,7 @@ class _WaterState extends State<Water> {
     final size = MediaQuery.of(context).size;
     formattedDate = DateFormat('kk:mm:ss \n EEE d MMM').format(now);
     var _dailyDrop;
-    _dailyDrop = 666;
+    _dailyDrop = _steps;
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
