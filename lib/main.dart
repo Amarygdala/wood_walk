@@ -5,7 +5,7 @@ import 'package:pedometer/pedometer.dart';
 import 'package:wood_walk/login.dart';
 import 'package:wood_walk/profile.dart';
 import 'package:wood_walk/water.dart';
-
+import 'package:weather_widget/WeatherWidget.dart';
 
 void main() => runApp( MaterialApp(
       initialRoute: '/',
@@ -16,6 +16,26 @@ void main() => runApp( MaterialApp(
         '/profile': (context) => Profile(),
       },
   ));
+
+class Weather extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: WeatherWidget(
+            size: Size.infinite,
+            weather: 'Thunder',
+            thunderConfig:ThunderConfig(
+                thunderWidth:12
+            )
+        )
+    );
+  }
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -97,32 +117,13 @@ class _MyAppState extends State<MyApp> {
             )
           ],
         ),
-        body: Center(
-            child: Container(
-              color: Colors.blue[400],
-              padding: EdgeInsets.all(145),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                         Text(
-                          'Steps taken:',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                         Text(
-                          _steps,
-                          style: TextStyle(fontSize: 30),
-
-                      ),
-                    ],
-                  ),
-//              Divider(
-//                height: 100,
-//                thickness: 0,
-//                color: Colors.white,
-//              ),
-              ),
-            ),
+        body: WeatherWidget(
+            size:Size.infinite,
+            weather:'Rainy',
+            rainConfig:RainConfig(
+                rainNum: 40
+            )
+        ),
         ),
     )
     );

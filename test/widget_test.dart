@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:wood_walk/main.dart';
+import 'file:///C:/Users/jwang/Documents/GitHub/wood_walk/lib/pages/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
