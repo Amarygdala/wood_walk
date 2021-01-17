@@ -9,33 +9,37 @@ class Profile extends StatelessWidget {
         appBar: AppBar(
           title: const Text('My Profile'),
           centerTitle: true,
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: Colors.green,
           elevation: 0,
         ),
         body: Stack(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 48, 0, 0),
-                child: Container(
-                    width: 240.0,
-                    height: 240.0,
-                    decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: new DecorationImage(
-                            fit: BoxFit.fill,
-                            image: new NetworkImage(
-                                "https://i1.rgstatic.net/ii/profile.image/846259942338566-1578775501342_Q512/Jordan_Wang.jpg")
-                        )
-                    )),
+            Container(
+              color: Colors.green,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
+                  child: Container(
+                      width: 240.0,
+                      height: 240.0,
+                      decoration: new BoxDecoration(
+                        border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: new AssetImage(
+                                  "assets/portrait.jpg")
+                          )
+                      )),
+                ),
+              ]
               ),
-            ]
             ),
             //Logo here
             Padding(
-              padding: EdgeInsets.fromLTRB(25, 330, 20, 0),
+              padding: EdgeInsets.fromLTRB(25, 350, 20, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -52,7 +56,7 @@ class Profile extends StatelessWidget {
                       Text(
                         'Xiang Weng ',
                         style: TextStyle(
-                          color: Colors.blue[200],
+                          color: Colors.green[300],
                           letterSpacing: 2.0,
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -78,7 +82,7 @@ class Profile extends StatelessWidget {
                       Text(
                         'January 17, 2021 ',
                         style: TextStyle(
-                          color: Colors.blue[200],
+                          color: Colors.green[300],
                           letterSpacing: 2.0,
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -104,7 +108,7 @@ class Profile extends StatelessWidget {
                     Text(
                       'xiang@htne.com ',
                       style: TextStyle(
-                        color: Colors.blue[200],
+                        color: Colors.green[300],
                         letterSpacing: 2.0,
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
