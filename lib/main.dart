@@ -6,6 +6,7 @@ import 'package:wood_walk/login.dart';
 import 'package:wood_walk/profile.dart';
 import 'package:wood_walk/water.dart';
 import 'package:weather_widget/WeatherWidget.dart';
+import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
 void main() => runApp( MaterialApp(
       initialRoute: '/',
@@ -105,7 +106,9 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
   }
 
-  int index = 0;
+
+  int index = 0, n = 0;
+  double percent = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -149,12 +152,49 @@ class _MyAppState extends State<MyApp> {
             )
           ],
         ),
-        body: WeatherWidget(
-            size:Size.infinite,
-            weather:'Rainy',
-            rainConfig:RainConfig(
-                rainNum: rain
-            )
+        body: Stack(
+          children: [
+
+            WeatherWidget(
+                size:Size.infinite,
+                weather:'Rainy',
+                rainConfig:RainConfig(
+                    rainNum: rain
+                )
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image(
+                        image: AssetImage('assets/tree$n.png'),
+                        width: 200,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Text('Stage $n'),
+            Container(
+              height: 50,
+              width: 400,
+              child: LiquidLinearProgressIndicator(
+                value: percent, // Defaults to 0.5.
+                valueColor: AlwaysStoppedAnimation(Colors.blueAccent), // Defaults to the current Theme's accentColor.
+                backgroundColor: Colors.white, // Defaults to the current Theme's backgroundColor.
+                borderColor: Colors.blue,
+                borderWidth: 5.0,
+                borderRadius: 12.0,
+                direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
+                center: Text(((1-percent)*100).toString() + "% until Stage " + (n+1).toString()),
+              ),
+            ),
+          ],
         ),
         ),
     )

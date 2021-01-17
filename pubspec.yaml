@@ -26,6 +26,7 @@ dependencies:
   pedometer: ^2.0.2
   intl: ^0.16.1
   weather_widget: ^1.0.5
+  liquid_progress_indicator: ^0.3.2
 
 
   # The following adds the Cupertino Icons font to your application.
