@@ -63,7 +63,7 @@ class Login extends StatelessWidget {
                       Text(
                         'Forgot password?',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
                         ),
                       )
                     ],
