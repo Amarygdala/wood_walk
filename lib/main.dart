@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         home: SafeArea(
         child: Scaffold(
         appBar: AppBar(
-          title: const Text('My Steps'),
+          title: const Text('My Tree'),
           centerTitle: true,
           backgroundColor: Colors.green,
           elevation: 10,
@@ -73,25 +73,25 @@ class _MyAppState extends State<MyApp> {
           onTap: (index) {
             print(index);
             String s;
-            if(index == 1) { s = '/tree';}
-            else if (index == 2) {s = '/profile';}
-            else {s = '/home';}
+            if(index == 0) s = '/tree';
+            else if (index == 1) s ='/home';
+            else s = '/profile';
             Navigator.pushNamed(context, s);
           },
           items: [
-            BottomNavigationBarItem(
-              icon: new Icon(
-                Icons.grass_sharp,
-              ),
-              label: 'Grow',
-            ),
             BottomNavigationBarItem(
               icon: new Icon(
                   Icons.water_damage,
                   color: Colors.white),
               label: 'Water',
             ),
-
+            BottomNavigationBarItem(
+              icon: new Icon(
+                Icons.grass_sharp,
+                color: Colors.green
+              ),
+              label: 'Grow',
+            ),
             BottomNavigationBarItem(
                 icon: Icon(
                     Icons.person,
