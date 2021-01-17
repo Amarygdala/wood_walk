@@ -7,6 +7,7 @@ import 'package:wood_walk/profile.dart';
 import 'package:wood_walk/water.dart';
 import 'package:weather_widget/WeatherWidget.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
+int n = 0;
 
 void main() => runApp( MaterialApp(
       initialRoute: '/',
@@ -64,6 +65,18 @@ class _MyAppState extends State<MyApp> {
     print(event);
     setState(() {
       _steps = event.steps.toString();
+      percent += 0.01;
+      if(percent >= 1){
+        percent = 0;
+        n++;
+        if(n != 4){
+          showStageUpDialog(context);
+        }else{
+          showFinishDialog(context);
+          n=0;
+        }
+
+      }
     });
   }
 
@@ -107,7 +120,7 @@ class _MyAppState extends State<MyApp> {
   }
 
 
-  int index = 0, n = 0;
+  int index = 0;
   double percent = 0.0;
 
   @override
@@ -200,4 +213,56 @@ class _MyAppState extends State<MyApp> {
     )
     );
   }
+}
+
+showStageUpDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {Navigator.pop(context);},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Congratulations!"),
+    content: Text("You have reached stage $n "),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+showFinishDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {Navigator.pop(context);},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Congratulations!"),
+    content: Text("You have grown the tree. Now a tree will be planted in real life under your name."),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
